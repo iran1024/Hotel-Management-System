@@ -1,0 +1,9 @@
+﻿.u_custom {
+    position: absolute;
+    align-self: center;
+    padding: 2px 2px 2px 2px;
+    box-sizing: border-box;
+    width: 100%;
+    word-wrap: break-word;
+    text-transform: none;
+}

@@ -1,0 +1,702 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{966EF566-8FC1-499F-BD2E-BEC408612C46}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iRan</RootNamespace>
+    <AssemblyName>酒店管理系统</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44336</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>ConcurrencyRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="view\a_Caiwu.aspx" />
+    <Content Include="view\a_CheckinInfo.aspx" />
+    <Content Include="view\a_CleanService.aspx" />
+    <Content Include="view\a_ExServiceMS.aspx" />
+    <Content Include="view\a_GRoomMS.aspx" />
+    <Content Include="view\a_MainPage.aspx" />
+    <Content Include="view\a_Notice.aspx" />
+    <Content Include="view\a_OrderMS.aspx" />
+    <Content Include="view\a_RegisterMS.aspx" />
+    <Content Include="view\a_RoomTypeMS.aspx" />
+    <Content Include="view\a_SelfInfo.aspx" />
+    <Content Include="view\data\document.js" />
+    <Content Include="view\data\jquery.color-2.1.2.min.js" />
+    <Content Include="view\data\jquery.datetimepicker.css" />
+    <Content Include="view\data\jquery.datetimepicker.full.min.js" />
+    <Content Include="view\data\styles.css" />
+    <Content Include="view\files\adminindex\data.js" />
+    <Content Include="view\files\adminindex\styles.css" />
+    <Content Include="view\files\AutoAdjustPostion.js" />
+    <Content Include="view\files\a_caiwu\data.js" />
+    <Content Include="view\files\a_caiwu\styles.css" />
+    <Content Include="view\files\a_checkininfo\data.js" />
+    <Content Include="view\files\a_checkininfo\styles.css" />
+    <Content Include="view\files\a_cleanservice\data.js" />
+    <Content Include="view\files\a_cleanservice\styles.css" />
+    <Content Include="view\files\a_exservicems\data.js" />
+    <Content Include="view\files\a_exservicems\styles.css" />
+    <Content Include="view\files\a_groomms\data.js" />
+    <Content Include="view\files\a_groomms\styles.css" />
+    <Content Include="view\files\a_mainpage\data.js" />
+    <Content Include="view\files\a_mainpage\styles.css" />
+    <Content Include="view\files\a_notice\data.js" />
+    <Content Include="view\files\a_notice\styles.css" />
+    <Content Include="view\files\a_orderms\data.js" />
+    <Content Include="view\files\a_orderms\styles.css" />
+    <Content Include="view\files\a_registerms\data.js" />
+    <Content Include="view\files\a_registerms\styles.css" />
+    <Content Include="view\files\a_roomtypems\data.js" />
+    <Content Include="view\files\a_roomtypems\styles.css" />
+    <Content Include="view\files\a_selfinfo\data.js" />
+    <Content Include="view\files\a_selfinfo\styles.css" />
+    <Content Include="view\files\CommonPrompt.css" />
+    <Content Include="view\files\CommonPrompt.js" />
+    <Content Include="view\files\custom.css" />
+    <Content Include="view\files\daterangepicker.js" />
+    <Content Include="view\files\error.png" />
+    <Content Include="view\files\iRan.js" />
+    <Content Include="view\files\jquery.animate-colors-min.js" />
+    <Content Include="view\files\sign_in\data.js" />
+    <Content Include="view\files\sign_in\styles.css" />
+    <Content Include="view\files\sign_up\data.js" />
+    <Content Include="view\files\sign_up\styles.css" />
+    <Content Include="view\files\u_checkout\data.js" />
+    <Content Include="view\files\u_checkout\styles.css" />
+    <Content Include="view\files\u_exservice\data.js" />
+    <Content Include="view\files\u_exservice\styles.css" />
+    <Content Include="view\files\u_mainpage\data.js" />
+    <Content Include="view\files\u_mainpage\styles.css" />
+    <Content Include="view\files\u_notice\data.js" />
+    <Content Include="view\files\u_notice\styles.css" />
+    <Content Include="view\files\u_orderroom\data.js" />
+    <Content Include="view\files\u_orderroom\styles.css" />
+    <Content Include="view\files\u_orderselect\data.js" />
+    <Content Include="view\files\u_orderselect\styles.css" />
+    <Content Include="view\files\u_selfinfo\data.js" />
+    <Content Include="view\files\u_selfinfo\styles.css" />
+    <Content Include="view\images\a_checkininfo\u174.png" />
+    <Content Include="view\images\a_checkininfo\u175.png" />
+    <Content Include="view\images\a_checkininfo\u176.png" />
+    <Content Include="view\images\a_checkininfo\u177.png" />
+    <Content Include="view\images\a_checkininfo\u178.png" />
+    <Content Include="view\images\a_checkininfo\u179.png" />
+    <Content Include="view\images\a_checkininfo\u180.png" />
+    <Content Include="view\images\a_checkininfo\u181.png" />
+    <Content Include="view\images\a_checkininfo\u182.png" />
+    <Content Include="view\images\a_checkininfo\u183.png" />
+    <Content Include="view\images\a_checkininfo\u194.png" />
+    <Content Include="view\images\a_checkininfo\u195.png" />
+    <Content Include="view\images\a_checkininfo\u196.png" />
+    <Content Include="view\images\a_checkininfo\u197.png" />
+    <Content Include="view\images\a_checkininfo\u198.png" />
+    <Content Include="view\images\a_checkininfo\u199.png" />
+    <Content Include="view\images\a_checkininfo\u200.png" />
+    <Content Include="view\images\a_checkininfo\u201.png" />
+    <Content Include="view\images\a_checkininfo\u202.png" />
+    <Content Include="view\images\a_checkininfo\u203.png" />
+    <Content Include="view\images\a_checkininfo\u212.svg" />
+    <Content Include="view\images\a_cleanservice\u418.png" />
+    <Content Include="view\images\a_cleanservice\u422.png" />
+    <Content Include="view\images\a_cleanservice\u423.svg" />
+    <Content Include="view\images\a_exservicems\u335.png" />
+    <Content Include="view\images\a_exservicems\u336.png" />
+    <Content Include="view\images\a_exservicems\u337.png" />
+    <Content Include="view\images\a_exservicems\u338.png" />
+    <Content Include="view\images\a_exservicems\u339.png" />
+    <Content Include="view\images\a_exservicems\u365.png" />
+    <Content Include="view\images\a_exservicems\u366.png" />
+    <Content Include="view\images\a_exservicems\u367.png" />
+    <Content Include="view\images\a_exservicems\u368.png" />
+    <Content Include="view\images\a_exservicems\u369.png" />
+    <Content Include="view\images\a_groomms\u100.png" />
+    <Content Include="view\images\a_groomms\u71.png" />
+    <Content Include="view\images\a_groomms\u72.png" />
+    <Content Include="view\images\a_groomms\u73.png" />
+    <Content Include="view\images\a_groomms\u74.png" />
+    <Content Include="view\images\a_groomms\u75.png" />
+    <Content Include="view\images\a_groomms\u96.png" />
+    <Content Include="view\images\a_groomms\u97.png" />
+    <Content Include="view\images\a_groomms\u98.png" />
+    <Content Include="view\images\a_groomms\u99.png" />
+    <Content Include="view\images\a_mainpage\u18.png" />
+    <Content Include="view\images\a_mainpage\u19.png" />
+    <Content Include="view\images\a_mainpage\u20.png" />
+    <Content Include="view\images\a_mainpage\u24.png" />
+    <Content Include="view\images\a_mainpage\u27_menu.png" />
+    <Content Include="view\images\a_mainpage\u29.png" />
+    <Content Include="view\images\a_mainpage\u29_mouseOver.png" />
+    <Content Include="view\images\a_mainpage\u40.png" />
+    <Content Include="view\images\a_mainpage\u41.svg" />
+    <Content Include="view\images\a_mainpage\u43.png" />
+    <Content Include="view\images\a_mainpage\u45.png" />
+    <Content Include="view\images\a_mainpage\u47.png" />
+    <Content Include="view\images\a_mainpage\u49.png" />
+    <Content Include="view\images\a_orderms\u255.png" />
+    <Content Include="view\images\a_orderms\u256.png" />
+    <Content Include="view\images\a_orderms\u257.png" />
+    <Content Include="view\images\a_orderms\u258.png" />
+    <Content Include="view\images\a_orderms\u259.png" />
+    <Content Include="view\images\a_orderms\u260.png" />
+    <Content Include="view\images\a_orderms\u261.png" />
+    <Content Include="view\images\a_orderms\u262.png" />
+    <Content Include="view\images\a_orderms\u263.png" />
+    <Content Include="view\images\a_orderms\u264.png" />
+    <Content Include="view\images\a_orderms\u265.png" />
+    <Content Include="view\images\a_orderms\u266.png" />
+    <Content Include="view\images\a_orderms\u267.png" />
+    <Content Include="view\images\a_orderms\u268.png" />
+    <Content Include="view\images\a_orderms\u290.png" />
+    <Content Include="view\images\a_orderms\u291.png" />
+    <Content Include="view\images\a_orderms\u292.png" />
+    <Content Include="view\images\a_orderms\u293.png" />
+    <Content Include="view\images\a_orderms\u294.png" />
+    <Content Include="view\images\a_orderms\u295.png" />
+    <Content Include="view\images\a_orderms\u296.png" />
+    <Content Include="view\images\a_orderms\确认5_u306.svg" />
+    <Content Include="view\images\a_registerms\u456.png" />
+    <Content Include="view\images\a_registerms\u457.png" />
+    <Content Include="view\images\a_registerms\u458.png" />
+    <Content Include="view\images\a_registerms\u459.png" />
+    <Content Include="view\images\a_registerms\u460.png" />
+    <Content Include="view\images\a_registerms\u461.png" />
+    <Content Include="view\images\a_registerms\u465.png" />
+    <Content Include="view\images\a_registerms\u466.png" />
+    <Content Include="view\images\a_registerms\u467.png" />
+    <Content Include="view\images\a_registerms\u480.png" />
+    <Content Include="view\images\a_registerms\u481.png" />
+    <Content Include="view\images\a_registerms\u482.png" />
+    <Content Include="view\images\a_registerms\u483.png" />
+    <Content Include="view\images\a_registerms\u484.png" />
+    <Content Include="view\images\a_registerms\u485.png" />
+    <Content Include="view\images\a_registerms\u489.png" />
+    <Content Include="view\images\a_registerms\u490.png" />
+    <Content Include="view\images\a_registerms\u491.png" />
+    <Content Include="view\images\a_registerms\u510.png" />
+    <Content Include="view\images\a_registerms\u511.png" />
+    <Content Include="view\images\a_registerms\u512.png" />
+    <Content Include="view\images\a_registerms\u513.png" />
+    <Content Include="view\images\a_registerms\u514.png" />
+    <Content Include="view\images\a_registerms\u515.png" />
+    <Content Include="view\images\a_registerms\u519.png" />
+    <Content Include="view\images\a_registerms\u520.png" />
+    <Content Include="view\images\a_registerms\u521.png" />
+    <Content Include="view\images\a_registerms\u534.png" />
+    <Content Include="view\images\a_registerms\u535.png" />
+    <Content Include="view\images\a_registerms\u536.png" />
+    <Content Include="view\images\a_registerms\u537.png" />
+    <Content Include="view\images\a_registerms\u538.png" />
+    <Content Include="view\images\a_registerms\u539.png" />
+    <Content Include="view\images\a_registerms\u543.png" />
+    <Content Include="view\images\a_registerms\u544.png" />
+    <Content Include="view\images\a_registerms\u545.png" />
+    <Content Include="view\images\a_roomtypems\u145.png" />
+    <Content Include="view\images\a_roomtypems\u146.png" />
+    <Content Include="view\images\a_roomtypems\u147.png" />
+    <Content Include="view\images\a_roomtypems\u148.png" />
+    <Content Include="view\images\a_roomtypems\u149.png" />
+    <Content Include="view\images\a_roomtypems\u150.png" />
+    <Content Include="view\images\a_roomtypems\u155.png" />
+    <Content Include="view\images\a_roomtypems\u156.png" />
+    <Content Include="view\images\a_roomtypems\u157.png" />
+    <Content Include="view\images\a_roomtypems\u158.png" />
+    <Content Include="view\images\sign_up\u21.svg" />
+    <Content Include="view\images\sign_up\u21p000.png" />
+    <Content Include="view\images\sign_up\u21p001.png" />
+    <Content Include="view\images\sign_up\u21p002.png" />
+    <Content Include="view\images\u_mainpage\u206_menu.png" />
+    <Content Include="view\images\u_mainpage\u215.svg" />
+    <Content Include="view\images\u_mainpage\u216_menu.png" />
+    <Content Include="view\images\u_mainpage\u218.png" />
+    <Content Include="view\images\u_mainpage\u221.png" />
+    <Content Include="view\images\u_mainpage\u222.png" />
+    <Content Include="view\images\u_mainpage\u223.png" />
+    <Content Include="view\images\u_mainpage\u295_menu.png" />
+    <Content Include="view\images\u_mainpage\u304.svg" />
+    <Content Include="view\images\u_mainpage\u305_menu.png" />
+    <Content Include="view\images\u_mainpage\u307.png" />
+    <Content Include="view\images\u_mainpage\u310.png" />
+    <Content Include="view\images\u_mainpage\u311.png" />
+    <Content Include="view\images\u_mainpage\u312.png" />
+    <Content Include="view\images\u_mainpage\u316.png" />
+    <Content Include="view\images\u_mainpage\u783_menu.png" />
+    <Content Include="view\images\u_mainpage\u837_menu.png" />
+    <Content Include="view\images\u_orderroom\u546.svg" />
+    <Content Include="view\images\u_orderroom\u547.svg" />
+    <Content Include="view\images\u_orderroom\u548.png" />
+    <Content Include="view\images\u_orderroom\u552.png" />
+    <Content Include="view\images\u_orderroom\u553.png" />
+    <Content Include="view\images\u_orderroom\u565.png" />
+    <Content Include="view\images\u_orderroom\u571.png" />
+    <Content Include="view\images\u_orderroom\u573.svg" />
+    <Content Include="view\images\u_orderroom\u58.svg" />
+    <Content Include="view\images\u_orderroom\u59.svg" />
+    <Content Include="view\images\u_orderroom\u60.png" />
+    <Content Include="view\images\u_orderroom\u600.svg" />
+    <Content Include="view\images\u_orderroom\u601.svg" />
+    <Content Include="view\images\u_orderroom\u602.png" />
+    <Content Include="view\images\u_orderroom\u606.png" />
+    <Content Include="view\images\u_orderroom\u607.png" />
+    <Content Include="view\images\u_orderroom\u619.png" />
+    <Content Include="view\images\u_orderroom\u627.svg" />
+    <Content Include="view\images\u_orderroom\u64.png" />
+    <Content Include="view\images\u_orderroom\u65.png" />
+    <Content Include="view\images\u_orderroom\u77.png" />
+    <Content Include="view\images\u_orderroom\u83.png" />
+    <Content Include="view\images\u_orderroom\u85.svg" />
+    <Content Include="view\images\u_orderselect\u256.png" />
+    <Content Include="view\images\u_orderselect\u257.png" />
+    <Content Include="view\images\u_orderselect\u258.png" />
+    <Content Include="view\images\u_orderselect\u259.png" />
+    <Content Include="view\images\u_orderselect\u260.png" />
+    <Content Include="view\images\u_orderselect\u261.png" />
+    <Content Include="view\images\u_orderselect\u262.png" />
+    <Content Include="view\images\u_orderselect\u263.png" />
+    <Content Include="view\images\u_orderselect\u276.png" />
+    <Content Include="view\images\u_orderselect\u277.png" />
+    <Content Include="view\images\u_orderselect\u278.png" />
+    <Content Include="view\images\u_orderselect\u279.png" />
+    <Content Include="view\images\u_orderselect\u744.png" />
+    <Content Include="view\images\u_orderselect\u745.png" />
+    <Content Include="view\images\u_orderselect\u746.png" />
+    <Content Include="view\images\u_orderselect\u747.png" />
+    <Content Include="view\images\u_orderselect\u748.png" />
+    <Content Include="view\images\u_orderselect\u749.png" />
+    <Content Include="view\images\u_orderselect\u759.png" />
+    <Content Include="view\images\u_orderselect\u760.png" />
+    <Content Include="view\images\u_orderselect\u761.png" />
+    <Content Include="view\images\u_orderselect\u798.png" />
+    <Content Include="view\images\u_orderselect\u799.png" />
+    <Content Include="view\images\u_orderselect\u800.png" />
+    <Content Include="view\images\u_orderselect\u801.png" />
+    <Content Include="view\images\u_orderselect\u802.png" />
+    <Content Include="view\images\u_orderselect\u803.png" />
+    <Content Include="view\images\u_orderselect\u813.png" />
+    <Content Include="view\images\u_orderselect\u814.png" />
+    <Content Include="view\images\u_orderselect\u815.png" />
+    <Content Include="view\plugins\debug\debug.js" />
+    <Content Include="view\plugins\debug\styles\debug.css" />
+    <Content Include="view\plugins\debug\styles\images\console_panel_off.svg" />
+    <Content Include="view\plugins\debug\styles\images\console_panel_on.svg" />
+    <Content Include="view\plugins\page_notes\page_notes.js" />
+    <Content Include="view\plugins\page_notes\styles\images\notes_panel_off.svg" />
+    <Content Include="view\plugins\page_notes\styles\images\notes_panel_on.svg" />
+    <Content Include="view\plugins\page_notes\styles\page_notes.css" />
+    <Content Include="view\plugins\recordplay\recordplay.js" />
+    <Content Include="view\plugins\recordplay\styles\recordplay.css" />
+    <Content Include="view\plugins\sitemap\sitemap.js" />
+    <Content Include="view\plugins\sitemap\styles\images\back_keys.svg" />
+    <Content Include="view\plugins\sitemap\styles\images\closed_item.svg" />
+    <Content Include="view\plugins\sitemap\styles\images\folder_closed_blue.svg" />
+    <Content Include="view\plugins\sitemap\styles\images\forward_keys.svg" />
+    <Content Include="view\plugins\sitemap\styles\images\left_arrow.svg" />
+    <Content Include="view\plugins\sitemap\styles\images\open_item.svg" />
+    <Content Include="view\plugins\sitemap\styles\images\page_lt_grey.svg" />
+    <Content Include="view\plugins\sitemap\styles\images\right_arrow.svg" />
+    <Content Include="view\plugins\sitemap\styles\images\search_off.svg" />
+    <Content Include="view\plugins\sitemap\styles\images\search_on.svg" />
+    <Content Include="view\plugins\sitemap\styles\images\sitemap_panel_off.svg" />
+    <Content Include="view\plugins\sitemap\styles\images\sitemap_panel_on.svg" />
+    <Content Include="view\plugins\sitemap\styles\sitemap.css" />
+    <Content Include="view\resources\chrome\allow-access.png" />
+    <Content Include="view\resources\chrome\axure_logo.png" />
+    <Content Include="view\resources\chrome\chrome.html" />
+    <Content Include="view\resources\chrome\details.png" />
+    <Content Include="view\resources\chrome\extensions.png" />
+    <Content Include="view\resources\chrome\safari.html" />
+    <Content Include="view\resources\chrome\safari_advanced.png" />
+    <Content Include="view\resources\chrome\safari_restrictions.png" />
+    <Content Include="view\resources\chrome\splitter.gif" />
+    <Content Include="view\resources\chrome\splitter.png" />
+    <Content Include="view\resources\css\axure_rp_page.css" />
+    <Content Include="view\resources\css\default.css" />
+    <Content Include="view\resources\css\images\images.html" />
+    <Content Include="view\resources\css\images\newwindow.gif" />
+    <Content Include="view\resources\css\images\note.gif" />
+    <Content Include="view\resources\css\images\touch.cur" />
+    <Content Include="view\resources\css\images\touch.svg" />
+    <Content Include="view\resources\css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="view\resources\css\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="view\resources\css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="view\resources\css\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="view\resources\css\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="view\resources\css\images\ui-bg_glass_75_ffffff_1x400.png" />
+    <Content Include="view\resources\css\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="view\resources\css\images\ui-bg_inset-soft_95_fef1ec_1x100.png" />
+    <Content Include="view\resources\css\images\ui-icons_222222_256x240.png" />
+    <Content Include="view\resources\css\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="view\resources\css\images\ui-icons_454545_256x240.png" />
+    <Content Include="view\resources\css\images\ui-icons_888888_256x240.png" />
+    <Content Include="view\resources\css\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="view\resources\css\jquery-ui-themes.css" />
+    <Content Include="view\resources\css\previewfonts.css" />
+    <Content Include="view\resources\css\reset.css" />
+    <Content Include="view\resources\expand.html" />
+    <Content Include="view\resources\icon\保洁.png" />
+    <Content Include="view\resources\icon\入住.png" />
+    <Content Include="view\resources\icon\单人床.png" />
+    <Content Include="view\resources\icon\双人床.png" />
+    <Content Include="view\resources\icon\总统套房.png" />
+    <Content Include="view\resources\icon\房型.png" />
+    <Content Include="view\resources\icon\操作.png" />
+    <Content Include="view\resources\icon\服务.png" />
+    <Content Include="view\resources\icon\水床.png" />
+    <Content Include="view\resources\icon\用户.png" />
+    <Content Include="view\resources\icon\硬板床.png" />
+    <Content Include="view\resources\icon\订单.png" />
+    <Content Include="view\resources\icon\财务.png" />
+    <Content Include="view\resources\icon\软榻床.png" />
+    <Content Include="view\resources\icon\酒店.png" />
+    <Content Include="view\resources\icon\预定.png" />
+    <Content Include="view\resources\images\axure9_logo.svg" />
+    <Content Include="view\resources\images\axure_logo.png" />
+    <Content Include="view\resources\images\axure_logo.svg" />
+    <Content Include="view\resources\images\caret_down.svg" />
+    <Content Include="view\resources\images\caret_down_off.svg" />
+    <Content Include="view\resources\images\close_x.svg" />
+    <Content Include="view\resources\images\close_x_minimize.svg" />
+    <Content Include="view\resources\images\divider.png" />
+    <Content Include="view\resources\images\divider.svg" />
+    <Content Include="view\resources\images\exit.svg" />
+    <Content Include="view\resources\images\favicon_play.ico" />
+    <Content Include="view\resources\images\overflow-icon.svg" />
+    <Content Include="view\resources\images\overflow_checkmark.svg" />
+    <Content Include="view\resources\images\overflow_icon_off.svg" />
+    <Content Include="view\resources\images\refresh.svg" />
+    <Content Include="view\resources\images\resize.svg" />
+    <Content Include="view\resources\images\return.svg" />
+    <Content Include="view\resources\images\transparent.gif" />
+    <Content Include="view\resources\images\views-icon.svg" />
+    <Content Include="view\resources\Other.html" />
+    <Content Include="view\resources\reload.html" />
+    <Content Include="view\resources\scripts\axure\action.js" />
+    <Content Include="view\resources\scripts\axure\adaptive.js" />
+    <Content Include="view\resources\scripts\axure\annotation.js" />
+    <Content Include="view\resources\scripts\axure\axQuery.js" />
+    <Content Include="view\resources\scripts\axure\axQuery.std.js" />
+    <Content Include="view\resources\scripts\axure\doc.js" />
+    <Content Include="view\resources\scripts\axure\drag.js" />
+    <Content Include="view\resources\scripts\axure\events.js" />
+    <Content Include="view\resources\scripts\axure\expr.js" />
+    <Content Include="view\resources\scripts\axure\flyout.js" />
+    <Content Include="view\resources\scripts\axure\geometry.js" />
+    <Content Include="view\resources\scripts\axure\globals.js" />
+    <Content Include="view\resources\scripts\axure\ie.js" />
+    <Content Include="view\resources\scripts\axure\init.temp.js" />
+    <Content Include="view\resources\scripts\axure\ios.js" />
+    <Content Include="view\resources\scripts\axure\jquery.nicescroll.min.js" />
+    <Content Include="view\resources\scripts\axure\legacy.js" />
+    <Content Include="view\resources\scripts\axure\math.js" />
+    <Content Include="view\resources\scripts\axure\model.js" />
+    <Content Include="view\resources\scripts\axure\move.js" />
+    <Content Include="view\resources\scripts\axure\recording.js" />
+    <Content Include="view\resources\scripts\axure\repeater.js" />
+    <Content Include="view\resources\scripts\axure\sto.js" />
+    <Content Include="view\resources\scripts\axure\style.js" />
+    <Content Include="view\resources\scripts\axure\tree.js" />
+    <Content Include="view\resources\scripts\axure\utils.temp.js" />
+    <Content Include="view\resources\scripts\axure\variables.js" />
+    <Content Include="view\resources\scripts\axure\viewer.js" />
+    <Content Include="view\resources\scripts\axure\visibility.js" />
+    <Content Include="view\resources\scripts\axutils.js" />
+    <Content Include="view\resources\scripts\jquery-1.7.1.min.js" />
+    <Content Include="view\resources\scripts\jquery-3.2.1.min.js" />
+    <Content Include="view\resources\scripts\jquery-ui-1.8.10.custom.min.js" />
+    <Content Include="view\resources\scripts\messagecenter.js" />
+    <Content Include="view\resources\scripts\player\axplayer.js" />
+    <Content Include="view\resources\scripts\player\init.js" />
+    <Content Include="view\resources\scripts\player\splitter.js" />
+    <Content Include="view\Sign in.aspx" />
+    <Content Include="view\Sign up.aspx" />
+    <Content Include="view\u_CheckOut.aspx" />
+    <Content Include="view\u_ExService.aspx" />
+    <Content Include="view\u_MainPage.aspx" />
+    <Content Include="view\u_Notice.aspx" />
+    <Content Include="view\u_OrderRoom.aspx" />
+    <Content Include="view\u_OrderSelect.aspx" />
+    <Content Include="view\u_SelfInfo.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="view\a_Caiwu.aspx.cs">
+      <DependentUpon>a_Caiwu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\a_Caiwu.aspx.designer.cs">
+      <DependentUpon>a_Caiwu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\a_CheckinInfo.aspx.cs">
+      <DependentUpon>a_CheckinInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\a_CheckinInfo.aspx.designer.cs">
+      <DependentUpon>a_CheckinInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\a_CleanService.aspx.cs">
+      <DependentUpon>a_CleanService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\a_CleanService.aspx.designer.cs">
+      <DependentUpon>a_CleanService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\a_ExServiceMS.aspx.cs">
+      <DependentUpon>a_ExServiceMS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\a_ExServiceMS.aspx.designer.cs">
+      <DependentUpon>a_ExServiceMS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\a_GRoomMS.aspx.cs">
+      <DependentUpon>a_GRoomMS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\a_GRoomMS.aspx.designer.cs">
+      <DependentUpon>a_GRoomMS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\a_MainPage.aspx.cs">
+      <DependentUpon>a_MainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\a_MainPage.aspx.designer.cs">
+      <DependentUpon>a_MainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\a_Notice.aspx.cs">
+      <DependentUpon>a_Notice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\a_Notice.aspx.designer.cs">
+      <DependentUpon>a_Notice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\a_OrderMS.aspx.cs">
+      <DependentUpon>a_OrderMS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\a_OrderMS.aspx.designer.cs">
+      <DependentUpon>a_OrderMS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\a_RegisterMS.aspx.cs">
+      <DependentUpon>a_RegisterMS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\a_RegisterMS.aspx.designer.cs">
+      <DependentUpon>a_RegisterMS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\a_RoomTypeMS.aspx.cs">
+      <DependentUpon>a_RoomTypeMS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\a_RoomTypeMS.aspx.designer.cs">
+      <DependentUpon>a_RoomTypeMS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\a_SelfInfo.aspx.cs">
+      <DependentUpon>a_SelfInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\a_SelfInfo.aspx.designer.cs">
+      <DependentUpon>a_SelfInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\CheckLogin.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\Sign in.aspx.cs">
+      <DependentUpon>Sign in.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\Sign in.aspx.designer.cs">
+      <DependentUpon>Sign in.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\Sign up.aspx.cs">
+      <DependentUpon>Sign up.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\Sign up.aspx.designer.cs">
+      <DependentUpon>Sign up.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\u_CheckOut.aspx.cs">
+      <DependentUpon>u_CheckOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\u_CheckOut.aspx.designer.cs">
+      <DependentUpon>u_CheckOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\u_ExService.aspx.cs">
+      <DependentUpon>u_ExService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\u_ExService.aspx.designer.cs">
+      <DependentUpon>u_ExService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\u_MainPage.aspx.cs">
+      <DependentUpon>u_MainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\u_MainPage.aspx.designer.cs">
+      <DependentUpon>u_MainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\u_Notice.aspx.cs">
+      <DependentUpon>u_Notice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\u_Notice.aspx.designer.cs">
+      <DependentUpon>u_Notice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\u_OrderRoom.aspx.cs">
+      <DependentUpon>u_OrderRoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\u_OrderRoom.aspx.designer.cs">
+      <DependentUpon>u_OrderRoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\u_OrderSelect.aspx.cs">
+      <DependentUpon>u_OrderSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\u_OrderSelect.aspx.designer.cs">
+      <DependentUpon>u_OrderSelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\u_SelfInfo.aspx.cs">
+      <DependentUpon>u_SelfInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\u_SelfInfo.aspx.designer.cs">
+      <DependentUpon>u_SelfInfo.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="view\resources\chrome\axure-chrome-extension.crx" />
+    <Content Include="view\resources\css\previewfonts\SourceSansPro-Regular.woff2" />
+    <Content Include="view\resources\css\previewfonts\SourceSansPro-Semibold.woff2" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="view\images\a_caiwu\" />
+    <Folder Include="view\images\a_notice\" />
+    <Folder Include="view\images\a_selfinfo\" />
+    <Folder Include="view\images\sign_in\" />
+    <Folder Include="view\images\u_checkout\" />
+    <Folder Include="view\images\u_exservice\" />
+    <Folder Include="view\images\u_notice\regen\" />
+    <Folder Include="view\images\u_selfinfo\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{38d7aa58-c95b-449b-86c6-a8073a56e11f}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{9fe00521-3a8b-42b1-814e-585e99407b2e}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBUtility\DBUtility.csproj">
+      <Project>{0988c62e-247f-471f-a183-db509c7a3839}</Project>
+      <Name>DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{53995dbb-9836-4647-ad22-865884fdeb9e}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49187</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44336/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
