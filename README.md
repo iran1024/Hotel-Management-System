@@ -1,5 +1,3 @@
 # Hotel-Management-System
 
-This is a tesing message for Github's Git-push.
-
-testing-op
+The hotel management system simply realizes the basic business requirements of small and medium-sized hotels.
